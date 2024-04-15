@@ -1,42 +1,72 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+:root {
+    /* Define font size variables */
+    --font-size-large: 3.5vh;
+    --font-size-medium: 2.5vh;
+    --font-size-small: 2vh;
+
+    --font-weight-bold: 700;
+    --font-weight-regular: 500;
+    --font-weight-light: 400;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
+.App {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    padding: 5vh 5vw;
+    overflow: hidden;
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+    header {
+        grid-column: 1 / span 6;
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
+        h1 {
+            color: lightsteelblue;
+            font-size: var(--font-size-medium);
+            font-weight: var(--font-weight-bold);
+            padding-bottom: 0.5ch;
+            border-bottom: 0.3ch solid lightsteelblue;
+        }
+    }
 
-.card {
-  padding: 2em;
-}
+    main {
+        grid-column: 2 / span 4;
+        grid-row: 3 / span 1;
 
-.read-the-docs {
-  color: #888;
+        .label {
+            color: lightsteelblue;
+            font-size: var(--font-size-small);
+            font-weight: var(--font-weight-light);
+            font-style: italic;
+        }
+
+        .message-text {
+            color: darkslategray;
+            font-size: var(--font-size-large);
+            font-weight: var(--font-weight-regular);
+            margin-top: 5%;
+        }
+    }
+
+    footer {
+        grid-column: 5 / span 2;
+        grid-row: 6 / span 1;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+
+        a {
+            color: lightsteelblue;
+            font-size: var(--font-size-small);
+            font-weight: var(--font-weight-light);
+            text-decoration: none;
+            border-bottom: 0.1ch solid transparent;
+            transition: all 0.2s;
+
+            &:hover {
+                color: slategray;
+                border-bottom: 0.1ch solid slategray;
+            }
+        }
+    }
 }
